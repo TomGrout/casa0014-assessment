@@ -1,0 +1,8 @@
+azimuth
+
+arduino 33 ble docs: 
+https://docs.arduino.cc/tutorials/nano-33-ble/imu-accelerometer/
+
+mpu6050 repo w/ examples:
+https://github.com/ElectronicCats/mpu6050
+
