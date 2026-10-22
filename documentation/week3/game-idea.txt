@@ -1,0 +1,2 @@
+the game is 2 players racing to input a given colour sequence of leds, for example blue red green (3 separate leds) in the middle of the game system light up, and players input their buttons. 
+
