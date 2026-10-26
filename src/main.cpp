@@ -5,12 +5,14 @@ void setup() {
   pinMode(0, INPUT_PULLUP);
   pinMode(1, INPUT_PULLUP);
   pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
 }
 
 void loop() {
   bool btn1 = digitalRead(0);
   bool btn2 = digitalRead(1);
   bool btn3 = digitalRead(2);
+  bool btn4 = digitalRead(3);
 
   if (btn1 == LOW) {
     Serial.println("Button 1 (D0) Pressed!");
@@ -22,6 +24,10 @@ void loop() {
   }
   if (btn3 == LOW) {
     Serial.println("Button 3 (D2) Pressed!");
+    delay(200); 
+  }
+  if (btn4 == LOW) {
+    Serial.println("Button 4 (D3) Pressed!");
     delay(200); 
   }
 }

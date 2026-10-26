@@ -6,3 +6,6 @@ https://docs.arduino.cc/tutorials/nano-33-ble/imu-accelerometer/
 mpu6050 repo w/ examples:
 https://github.com/ElectronicCats/mpu6050
 
+connect buttons to arduino
+https://www.youtube.com/watch?v=Y23vMfynUJ0
+
