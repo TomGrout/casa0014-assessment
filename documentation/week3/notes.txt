@@ -1,0 +1,15 @@
+weekly update - casa0014 vespera
+
+1. Hardware and firmware
+Confirmed MKR WiFi 1010 with platofrm.ini
+wired 4 buttons and 4 LEDs to mkr1010 to test board input/output
+
+2. Software
+used serial monitor to log electronics testing
+tested random LED sequence for game aspect with D4-D7 pins
+committed and pushed to git with platformio config to maintain reproducability 
+
+3. Next week
+Draw sketches and start crafting low-medium fidelity prototype
+wire up more buttons and add points system for correct button-LED input
+integrate initial mqtt payload sending via wifi
