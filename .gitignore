@@ -4,7 +4,7 @@
 .vscode/launch.json
 .vscode/ipch
 
-arduino_secrets.h
+include/arduino_secrets.h
 
 .env
 *.env
