@@ -1,0 +1,9 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#F0F0F0'}}}%%
+flowchart TD
+    A(["From Component 4: Scoreboard Updated"]) --> B{"Has Winner Lit All 6 Fins?<br/>(36 LEDs)"}
+    
+    B -- "No" --> C(["Return to Component 3: Next Round"])
+    
+    B -- "Yes (Match Won!)" --> D["Enter STATE_VICTORY:<br/>Overwrite All 72 Vespera LEDs"]
+    D --> E["Stream Winner's Animation via MQTT<br/>(8Hz / 125ms using millis() for 6s)"]
+    E --> F(["Return to Component 2: Reset Match (STATE_SELECT)"])

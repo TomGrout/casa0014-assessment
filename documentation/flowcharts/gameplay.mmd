@@ -1,0 +1,18 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#F0F0F0'}}}%%
+flowchart TD
+    A(["From Component 2 or 5"]) --> B["generateNewSequence():<br/>Flash 3-Step Target Sequence on LEDs"]
+    B --> C["Reset Round Progress (currentIndex = 0)"]
+    C --> D["Poll Player Buttons in loop()"]
+    
+    D --> E{"Button Pressed?<br/>(digitalRead == LOW)"}
+    E -- "No" --> D
+    E -- "Yes (Debounce)" --> F{"Matches<br/>targetSequence[currentIndex]?"}
+    
+    F -- "No (Wrong)" --> G["Flash Error LEDs Twice &<br/>Reset Player Progress (currentIndex = 0)"]
+    G --> D
+    
+    F -- "Yes (Correct)" --> H["Increment Progress (currentIndex++)"]
+    H --> I{"Completed All 3 Steps?<br/>(currentIndex >= 3)"}
+    
+    I -- "No" --> D
+    I -- "Yes (Round Won!)" --> J(["Proceed to Component 4: Vespera Scoreboard Update"])

@@ -1,0 +1,16 @@
+weekly update - casa0014 vespera
+
+0. goals & progress (from week 3)
+Draw sketches and start crafting low-medium fidelity prototype
+Goal Achieved? Y/N
+Implementation: 
+
+wire up more buttons and add points system for correct button-LED input
+Goal Achieved?
+Implementation: 
+
+integrate initial mqtt payload sending via wifi
+Goal Achieved?
+Implementation: 
+
+

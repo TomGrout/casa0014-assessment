@@ -1,0 +1,8 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#F0F0F0'}}}%%
+flowchart TD
+    A(["1. Power On / Press Physical RST Button"]) --> B["Configure Player Button Pins as INPUT_PULLUP"]
+    B --> C["Configure Local Display LEDs / NeoPixel as OUTPUT"]
+    C --> D["Seed RNG via Unconnected Analog Pin:<br/>randomSeed(analogRead(A0))"]
+    D --> E["playRandomStartupSequence() Flashes 4 Random LEDs"]
+    E --> F["Connect to WiFi & MQTT broker (mqtt.cetools.org)<br/>Zero out payload array"]
+    F --> G(["Proceed to Component 2: Pre-Game Setup (STATE_SELECT)"])

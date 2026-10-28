@@ -1,0 +1,11 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#F0F0F0'}}}%%
+flowchart TD
+    A(["From Component 3: Round Won"]) --> B["Award +1 Fin (+6 LEDs) to Round Winner"]
+    B --> C{"Which Player Won?"}
+    
+    C -- "Player 1" --> D1["Update vespera_payload[0..107]<br/>(Fins 0-5 / LEDs 0-35)"]
+    C -- "Player 2" --> D2["Update vespera_payload[108..215]<br/>(Fins 6-11 / LEDs 36-71)"]
+    
+    D1 --> E["Publish 216-Byte Payload to MQTT Broker"]
+    D2 --> E
+    E --> F(["Proceed to Component 5: Match Check & Finale"])

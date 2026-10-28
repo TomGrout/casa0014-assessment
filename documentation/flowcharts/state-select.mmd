@@ -1,0 +1,6 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#F0F0F0'}}}%%
+flowchart TD
+    A(["From Component 1 or 5"]) --> B["Enter STATE_SELECT:<br/>Players Choose Signature Colour"]
+    B --> C["Players Select Victory Animation Preset (1-4)"]
+    C --> D["Reset Scoreboard:<br/>Player 1 Fins = 0 | Player 2 Fins = 0"]
+    D --> E(["Proceed to Component 3: Sequence Race Loop (STATE_PLAYING)"])
