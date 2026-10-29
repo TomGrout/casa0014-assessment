@@ -1,0 +1,4 @@
+1x Arduino MKR WiFi 1010, 
+6x push buttons, 
+4x LED (RGBY), 
+330ohm resistors
