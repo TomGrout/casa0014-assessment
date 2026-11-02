@@ -1,0 +1,7 @@
+Zero-Blocking Input Polling & Edge Detection: Instead of digitalRead(...) == LOW with delay(200) or flashError() freezing the loop, pollInputsNonBlocking() detects the exact HIGH -> LOW falling edge of each button with an independent 35ms debounce timer. Both players can press buttons at the exact same millisecond without locking each other out.
+
+Smart Sequence Restart on Mistake: Because players have no individual error screen, pressing a wrong button mid-sequence checks if (index == targetSequence[0]). If a player realizes they made a mistake and starts inputting the sequence again from the first colour, that press immediately counts as Step 1/3 (progress = 1) rather than being reset.
+
+Expanded MQTT Packet Buffer (512 Bytes): PubSubClient defaults to a 256-byte limit, which can silently drop a 216-byte payload once the topic string (student/CASA0014/luminaire/<user_id>) is added. Calling mqttClient.setBufferSize(512) in setup() guarantees every 216-byte Vespera packet transmits intact.
+
+Standalone Crit Boot Timeout: Replacing while (!Serial); with a 2500ms timeout (while (!Serial && (millis() - serialWait < 2500));) ensures your game boots automatically when powered from a wall adapter or USB power bank during your live crit, while still capturing boot logs if you have the Serial Monitor open.
