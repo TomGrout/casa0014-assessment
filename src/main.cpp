@@ -115,7 +115,7 @@ void setup() {
   randomSeed(analogRead(A0));
 
   while (!Serial);
-  testAllLEDsOnBoot();
+  // testAllLEDsOnBoot();
   generateNewSequence();
 }
 

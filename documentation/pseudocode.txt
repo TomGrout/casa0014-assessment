@@ -1,0 +1,40 @@
+// 1. MATCH INITIALISATION (STATE_SELECT)
+p1Fins = 0, p2Fins = 0
+clear vespera_payload[216]
+
+// 2. ROUND SETUP
+FUNCTION startNewRound():
+    FOR step = 0 TO 2:
+        targetSequence[step] = random(0, 3)
+        flash centralLED[targetSequence[step]]
+    p1Progress = 0, p2Progress = 0
+
+// 3. ACTIVE GAMEPLAY LOOP (STATE_PLAYING)
+ startNewRound()
+
+LOOP FOREVER:
+    FOR each player (P1, P2) AND buttonIndex (0 TO 3):
+        IF buttonPressed(player, buttonIndex):
+            flash centralLED[buttonIndex] // Echo input
+
+            IF buttonIndex == targetSequence[player.progress]:
+                player.progress++
+
+                // Check for Round Win (3/3 steps matched)
+                IF player.progress == 3:
+                    player.fins++
+                    update player half of vespera_payload[216] (+6 LEDs)
+                    publish vespera_payload to MQTT broker
+
+                    // Check for Match Win (6/6 fins lit = 36 LEDs)
+                    IF player.fins == 6:
+                        // STATE_VICTORY
+                        stream winner animation across all 72 Vespera LEDs for 6s
+                        p1Fins = 0, p2Fins = 0
+                        clear vespera_payload[216]
+
+                    startNewRound()
+
+            ELSE: // Wrong button pressed
+                double-flash all 4 centralLEDs (error signal)
+                player.progress = 0 // Reset only that player
