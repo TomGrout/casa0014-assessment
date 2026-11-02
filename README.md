@@ -11,3 +11,9 @@
 ### Parts  
 See resources/bill-of-materials.txt  
 Follow 
+
+### pinout & truth table
+
+
+### design rationale
+

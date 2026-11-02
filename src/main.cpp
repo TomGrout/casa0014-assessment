@@ -25,8 +25,8 @@ const uint16_t PAYLOAD_SIZE = 216; // 72 LEDs * 3 RGB bytes
 uint8_t vespera_payload[PAYLOAD_SIZE];
 
 // Player Signature Colours on Vespera (R, G, B)
-const uint8_t P1_RGB[3] = {0, 220, 255}; // Cyan for Player 1 (Fins 0-5 / Bytes 0-107)
-const uint8_t P2_RGB[3] = {255, 0, 120}; // Magenta for Player 2 (Fins 6-11 / Bytes 108-215)
+const uint8_t P1_RGB[3] = {0, 220, 25}; // Green for Player 1 (Fins 0-5 / Bytes 0-107)
+const uint8_t P2_RGB[3] = {255, 0, 250}; // Magenta for Player 2 (Fins 6-11 / Bytes 108-215)
 
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
@@ -77,7 +77,12 @@ void clearLocalLEDs() {
 
 void publishVesperaPayload() {
   if (mqttClient.connected()) {
-    mqttClient.publish(VESPERA_TOPIC, vespera_payload, PAYLOAD_SIZE);
+    bool success = mqttClient.publish(VESPERA_TOPIC, vespera_payload, PAYLOAD_SIZE);
+    if (success) {
+      Serial.println("-> MQTT Publish SUCCESS");
+    } else {
+      Serial.println("-> MQTT Publish FAILED (Packet dropped)");
+    }
   }
 }
 
@@ -276,6 +281,14 @@ void pollInputsNonBlocking() {
 // 6. SETUP & MAIN LOOP
 void setup() {
   Serial.begin(9600);
+  while (!Serial);
+
+  Serial.println(SECRET_WIFIPASS);
+  Serial.println(SECRET_WIFIUSER);
+  Serial.println(SECRET_MQTTPASS);
+  Serial.println(SECRET_MQTTUSER);
+  Serial.println("ffs");
+
   // Wait up to 2.5s for Serial Monitor, then boot standalone for power 
   unsigned long serialWait = millis();
   while (!Serial && (millis() - serialWait < 2500));
@@ -291,7 +304,7 @@ void setup() {
   randomSeed(analogRead(A0));
 
   // Expand PubSubClient packet buffer to fit topic + 216 byte payload cleanly
-  mqttClient.setBufferSize(512);
+  mqttClient.setBufferSize(256);
   mqttClient.setServer(MQTT_BROKER, MQTT_PORT);
 
   Serial.print("Connecting to Wi-Fi: ");
@@ -304,7 +317,13 @@ void setup() {
   }
   Serial.println();
 
-  maintainNetwork();
+  Serial.println("Test - Waiting for MQTT broker...");
+  // Trap the code here until MQTT is fully connected
+  while (!mqttClient.connected()) {
+    maintainNetwork();
+    delay(250); // Small pause to prevent spamming the network
+  }
+  
   updateScoreboardPayload(); // Clear Vespera on boot
   startNewRound();
 }
@@ -334,7 +353,7 @@ void loop() {
 
     case STATE_VICTORY:
       // 6 second 8Hz (125ms) Vespera total takeover animation across all 72 LEDs
-      if (now - lastAnimFrameTime >= 125) {
+      if (now - lastAnimFrameTime >= 250) {
         lastAnimFrameTime = now;
         const uint8_t* winRGB = (matchWinner == 1) ? P1_RGB : P2_RGB;
 
