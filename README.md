@@ -8,12 +8,24 @@
 **(1)**: PlatformIO: Upload (Right facing arrow on bottom row)  
 
 
-### Parts  
-See resources/bill-of-materials.txt  
-Follow 
+### Parts (Bill of Materials)  
+1x Arduino MKR WiFi 1010, 
+8x push buttons, 
+4x LED (RGBY), 
+4 x 330ohm resistors
+21x jumper wires
 
 ### pinout & truth table
-
+see: documentation/Pinout and Truth Table.xlsx
 
 ### design rationale
+The design rationale centers on a fast-paced, two-player sequence-matching arcade game with low cognitive load and high social engagement.  
 
+- Core Mechanic: 2-player competitive sequence-matching race.  
+- Hardware: Shared Arduino MKR WiFi 1010 managing 8 coloured buttons and 4 central LEDs.  
+- Network: 216-byte MQTT payload updates (publishing only on score changes).  
+- Housing: Medium-fidelity cardboard enclosure with strictly no 3D printing.  
+
+The result is a functional tabletop travel console that generates randomized LED target sequences and drives 'territory captures' (i.e. players competiting to gain LEDs and control of the Vespera) on the 72-LED Vespera luminaire via MQTT.  
+
+I learned that the physical messiness of hardware (specifically contact bounce and voltage constraints) necessitates robust, non-blocking software debouncing to ensure fairness and legibility in a shared environment.  
