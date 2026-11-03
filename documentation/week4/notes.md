@@ -1,16 +1,17 @@
-weekly update - casa0014 vespera
+### weekly update - casa0014 vespera
 
-0. goals & progress (from week 3)
-Draw sketches and start crafting low-medium fidelity prototype
+**goals & progress (from week 3)**
+
+- Draw sketches and start crafting low-medium fidelity prototype
 Goal Achieved? Y
 Implementation: Drew sketches of planned idea in pencil. Wired buttons and LEDs to breadboard to begin testing game logic
 
-wire up more buttons and add points system for correct button-LED input
+- wire up more buttons and add points system for correct button-LED input
 Goal Achieved? Yes, with wiring errors on 2 buttons
 Implementation: Attached buttons to breadboard and connected with ground pin
 Work out cause of error and fix next week.
 
-integrate initial mqtt payload sending via wifi
+- integrate initial mqtt payload sending via wifi
 Goal Achieved? N
 Implementation: 
 

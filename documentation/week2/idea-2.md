@@ -1,4 +1,4 @@
-new idea:
+## new idea:
 
 a 2 player game involving a simple task
 

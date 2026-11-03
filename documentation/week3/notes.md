@@ -1,5 +1,6 @@
-weekly update - casa0014 vespera
+### weekly update - casa0014 vespera
 
+**goals & progress**
 1. Hardware and firmware
 Confirmed MKR WiFi 1010 with platofrm.ini
 wired 4 buttons and 4 LEDs to mkr1010 to test board input/output
