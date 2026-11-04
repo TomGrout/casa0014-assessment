@@ -40,6 +40,10 @@ the game concept was inspired by Mastermind the Board Game, but adding 2 player 
 
 <img width="480" height="640" alt="image" src="https://github.com/user-attachments/assets/0f44cce4-9897-47a7-aac0-0d54ba57daeb" />  
 
+and Simon - Follow light sequence, Bop, Twist, or Pull to score points.  
+<img width="195" height="181" alt="image" src="https://github.com/user-attachments/assets/6e895174-2b35-49f4-8f4b-82b4ce30bb02" />  
+
+
 ### product  
 
 <img width="3024" height="4032" alt="final-design" src="https://github.com/user-attachments/assets/571a2306-b02c-4daf-84d5-ef890e7d575f" />  
