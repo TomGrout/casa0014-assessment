@@ -51,3 +51,18 @@ with cover
 <img width="3024" height="4032" alt="IMG_8845" src="https://github.com/user-attachments/assets/76611f37-a78a-461e-91fc-8da97ff0bad6" />  
 without cover  
 
+### references
+
+CASA0014: Prototyping the Internet of Things  
+https://github.com/ucl-casa-ce/casa0014  
+
+SN74HC595 Shift Register Datasheet  
+https://www.ti.com/lit/ds/symlink/sn74hc595.pdf  
+
+UCL CASA: CASA0014 Vespera Luminaire Installation Overview  
+Link / Reference: https://www.youtube.com/watch?v=PV-KKoTKw0o  
+
+CASA Connected Environments Blog: Living Labs and Connected Devices in the Olympic Park (ucl.ac.uk / UCL CASA research notes)  
+
+Adafruit Learning System: Debouncing Inputs & Non-Blocking Timing in Embedded C++ (learn.adafruit.com)  
+
