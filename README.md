@@ -29,3 +29,21 @@ The design rationale centers on a fast-paced, two-player sequence-matching arcad
 The result is a functional tabletop travel console that generates randomized LED target sequences and drives 'territory captures' (i.e. players competiting to gain LEDs and control of the Vespera) on the 72-LED Vespera luminaire via MQTT.  
 
 I learned that the physical messiness of hardware (specifically contact bounce and voltage constraints) necessitates robust, non-blocking software debouncing to ensure fairness and legibility in a shared environment.  
+
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/25355148-e3eb-4aab-af9b-f568621e96bd" />  
+circuit diagram  
+
+### inspiration  
+
+the game concept was inspired by Mastermind the Board Game, but adding 2 player interactivity makes the concept a lot more engaging, while simplifying the rules down to gear towards children.  
+<img width="2000" height="2000" alt="image" src="https://github.com/user-attachments/assets/d44f16c6-536a-4146-89e9-d7a669798f80" />  
+
+<img width="480" height="640" alt="image" src="https://github.com/user-attachments/assets/0f44cce4-9897-47a7-aac0-0d54ba57daeb" />  
+
+### product  
+
+<img width="3024" height="4032" alt="final-design" src="https://github.com/user-attachments/assets/571a2306-b02c-4daf-84d5-ef890e7d575f" />  
+with cover  
+<img width="3024" height="4032" alt="IMG_8845" src="https://github.com/user-attachments/assets/76611f37-a78a-461e-91fc-8da97ff0bad6" />  
+without cover  
+
