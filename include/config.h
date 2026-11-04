@@ -30,7 +30,7 @@ const uint16_t MQTT_BUF_SIZE   = 512;
 // Array indices: 0 = Yellow, 1 = Blue, 2 = Red, 3 = Green
 const uint8_t PIN_LEDS[4]      = {5, 4, 3, 2};
 const uint8_t PIN_P1_BTNS[4]   = {6, 7, 8, 9};
-const uint8_t PIN_P2_BTNS[4]   = {A1, A2, A3, A4};
+const uint8_t PIN_P2_BTNS[4]   = {A4, A2, A3, A1};
 const uint8_t PIN_RNG_SEED     = A0; // Floating analog pin (for random seed)
 
  
@@ -45,5 +45,21 @@ const unsigned long VICTORY_FRAME_MS = 250; // 4Hz throttled publish
 // Player Colors (R, G, B)
 const uint8_t P1_COLOUR[3]     = {0, 220, 25}; // Green
 const uint8_t P2_COLOUR[3]     = {220, 0, 250};  // Purple
+
+// Sequence display timing
+const unsigned long SEQ_PRE_DELAY_MS = 1000;
+const unsigned long SEQ_ON_MS = 500;
+const unsigned long SEQ_OFF_MS = 300;
+
+// Round transition animation
+const unsigned long TRANS_FRAME_MS = 120;
+const unsigned long TRANS_DURATION_MS = 1200;
+
+// Victory animation frame boundaries
+const uint8_t ACT1_END_FRAME = 12;
+const uint8_t ACT2_END_FRAME = 24;
+
+const unsigned long WIFI_RETRY_MS = 10000;  // Retry Wi-Fi every 10 seconds
+const unsigned long MQTT_RETRY_MS = 5000;
 
 #endif
